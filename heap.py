@@ -19,7 +19,8 @@ class Heap(object):
   def fixUp(self, index):
     parentIndex = int((index - 1) / 2)
 
-    while parentIndex >= 0 and self.heap[parentIndex] < self.index:
+    while parentIndex >= 0 and
+      self.heap[parentIndex] < self.index: # < MIN Tree
       # swap them
       temp = self.heap[index]
       self.heap[index] = self.heap[parentIndex]
@@ -32,3 +33,18 @@ class Heap(object):
     if self.currentPosition >= Heap.HEAP_SIZE
       return True
     return False
+
+  def traverse(self):
+    for i in range(self.currentPosition):
+      print(' %d => %s ' % (i, self.heap[i]))
+
+heap = Heap()
+
+heap.insert(10)
+heap.insert(20)
+heap.insert(30)
+heap.insert(40)
+heap.insert(4)
+
+heap.traverse()
+
